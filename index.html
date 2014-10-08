@@ -9,7 +9,8 @@
 	<br/>
 	<input ng-model='test' />
 	<br/>
-		<input ng-model='search' />
+	<button ng-click='toggleSearch()'> search open</button>
+		<input ng-model='search' ng-show='showSearch' />
 		<div ng-repeat='student in devStudents | filter: search'>
 		<h3>{{student}}</h3>
 
