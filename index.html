@@ -12,7 +12,10 @@
 	<button ng-click='toggleSearch()'> search open</button>
 		<input ng-model='search' ng-show='showSearch' />
 		<div ng-repeat='student in devStudents | filter: search'>
-		<h3>{{student}}</h3>
+		<h3>{{student.name}}</h3>
+		Enrollment Status: {{student.status}}
+		<input ng-model='student.status'/>
+		<button ng-click='updateEnrollmentStatus(student)'>Update</button>
 
 		</div>
 
@@ -22,5 +25,6 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 <script type="text/javascript" src ="app.js"></script>
 <script type="text/javascript" src="MainCtrl.js"></script>
+<script type="text/javascript" src="mainService.js"></script>
 </body>
 </html>
