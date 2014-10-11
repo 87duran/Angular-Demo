@@ -6,6 +6,14 @@
 <div ng-controller="MainCtrl">
 
 	Hello {{test}}
+	<button ng-click='getSmurfs()'>Get the Smurfs</button>
+	<div ng-repeat='smurf in smurfs'>
+	<h4>{{smurf.name}}</h4>
+
+	</div>
+	<br/>
+
+
 	<br/>
 	<input ng-model='test' />
 	<br/>

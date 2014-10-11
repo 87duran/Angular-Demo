@@ -8,7 +8,13 @@ app.controller('MainCtrl', function($scope, mainService){
 	};
 	$scope.updateEnrollmentStatus = function(student) {
 		mainService.updateStudent(student);
-	}
+	};
+	$scope.getSmurfs = function(){
+		mainService.getSmurfs().then(function(smurfs){
+			$scope.smurfs = smurfs;
+
+		});
+	};
 
 
 });
