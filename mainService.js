@@ -1,10 +1,6 @@
 var app = angular.module('ngDemo');
 
-app.factory('mainService', function($http) {
-	
-
-
-
+app.factory('mainService', function($http, $q) {
 
 
 	var devStudents = [{
@@ -44,7 +40,16 @@ app.factory('mainService', function($http) {
 			}).then(function(response){
 				return response.data;
 			});
-
+		},
+		getSmurfsWithQ: function() {
+			var deferred = $q.defer();
+			$http({
+				method: 'GET',
+				url: 'http://smurfs.devmounta.in/smurfs/'
+			}).then(function(response){
+				return deferred.resolve(response.data)
+			});
+			return deferred.promise;
 		}
 	};
 

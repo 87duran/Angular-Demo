@@ -12,7 +12,11 @@ app.controller('MainCtrl', function($scope, mainService){
 	$scope.getSmurfs = function(){
 		mainService.getSmurfs().then(function(smurfs){
 			$scope.smurfs = smurfs;
-
+		});
+	};
+	$scope.getSmurfsWithQ = function(){
+		mainService.getSmurfsWithQ().then(function(smurfs){
+			$scope.smurfs = smurfs;
 		});
 	};
 
